@@ -1,4 +1,4 @@
-package net.kohlernetworks.rest.webservices.restfulwebservices;
+package net.kohlernetworks.rest.webservices.restfulwebservices.helloworld;
 
 public class HelloWorldBean {
 
