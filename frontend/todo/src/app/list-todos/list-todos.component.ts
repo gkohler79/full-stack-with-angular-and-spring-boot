@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TodoDataService } from '../service/data/todo-data.service';
 import { Message } from '@angular/compiler/src/i18n/i18n_ast';
+import { Router } from '@angular/router';
 
 export class Todo {
   constructor(
@@ -29,7 +30,7 @@ message: string
  //   new Todo(3, 'Visit India', false, new Date())
  // ]
 
-  constructor(private todoService:TodoDataService) { }
+  constructor(private todoService:TodoDataService, private router:Router) { }
 
   ngOnInit() {
     this.refreshTodos();
@@ -53,6 +54,11 @@ deleteTodo(id) {
       this.refreshTodos();
     }
   )
+}
+
+updateTodo(id) {
+  console.log(`update ${id}`);
+  this.router.navigate(['todos', id])
 }
 
 }
